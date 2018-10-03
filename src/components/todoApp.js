@@ -21,8 +21,8 @@ export default class TodoApp extends React.Component {
           <header className="header">
             <h1>todos</h1>
             <TodoEntry todoStore={todoStore} />
+            <TodoTags todoStore={todoStore} viewStore={viewStore} />
           </header>
-          <TodoTags todoStore={todoStore} viewStore={viewStore} />
           {
             <div style={{ backgroundColor: '#f2b632' }}>
               {todoStore.checkTodosWithFitler().length > 0
