@@ -20,7 +20,7 @@ export default class TodoEntry extends React.Component {
         <div>
           <input
             ref="newTag"
-            className="new-tag"
+            className="new-todo"
             placeholder="Add a Tag"
             onKeyDown={this.handleNewTag}
           />

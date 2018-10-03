@@ -24,11 +24,15 @@ export default class TodoApp extends React.Component {
           </header>
           <TodoTags todoStore={todoStore} viewStore={viewStore} />
           {
-            <div>
+            <div style={{ backgroundColor: '#f2b632' }}>
               {this.props.todoStore.checkTodosWithFitler().length > 0
                 ? this.props.todoStore
                     .checkTodosWithFitler()
-                    .map((elem, index) => <div key={index}>{elem.title} </div>)
+                    .map((elem, index) => (
+                      <div style={{ color: '#FFF' }} key={index}>
+                        {elem.title}
+                      </div>
+                    ))
                 : null}
             </div>
           }

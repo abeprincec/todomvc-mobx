@@ -1,6 +1,5 @@
 import React from 'react';
 import { observer } from 'mobx-react';
-import TodosWithTags from './todosWithTags';
 
 @observer
 export default class TodoTags extends React.Component {
@@ -13,7 +12,13 @@ export default class TodoTags extends React.Component {
           return (
             <button
               key={index}
-              style={{ margin: '3px', backgroundColor: 'red' }}
+              style={{
+                margin: '3px',
+                backgroundColor: '#CCC',
+                borderRadius: '3px',
+                padding: '5px',
+                color: '#111'
+              }}
               value={`${tag}`}
               onClick={e => this.showTag(e)}>
               {tag}
@@ -25,19 +30,6 @@ export default class TodoTags extends React.Component {
   }
 
   showTag = e => {
-    // const { todoStore } = this.props;
-    // const tagName = e.currentTarget.value;
-
-    // this.props.todoStore.tagName = tagName;
-    // const todos = todoStore.todos.slice();
-
-    // const check = todos.filter(item =>
-    //   item.tags.includes(this.props.todoStore.tagName)
-    // );
-
     this.props.todoStore.tagName = e.currentTarget.value;
-
-    // console.log(check);
-    console.log(this.props.todoStore.checkTodosWithFitler());
   };
 }

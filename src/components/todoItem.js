@@ -27,16 +27,26 @@ export default class TodoItem extends React.Component {
             onChange={this.handleToggle}
           />
           <label onDoubleClick={this.handleEdit}>{todo.title}</label>
-          <span>
+          <button
+            className="destroy"
+            style={{ marginBottom: '30px' }}
+            onClick={this.handleDestroy}
+          />
+          <div
+            style={{
+              padding: '5px',
+              display: 'flex',
+              flexDirection: 'row-reverse',
+              fontSize: '0.9rem'
+            }}>
             {todo.tags.length > 0
               ? todo.tags.map((elem, index) => (
-                  <span key={index} style={{ margin: '10px' }}>
+                  <span key={index} style={{ margin: '10px', float: 'right' }}>
                     {elem}
                   </span>
                 ))
               : null}
-          </span>
-          <button className="destroy" onClick={this.handleDestroy} />
+          </div>
         </div>
         <input
           ref="editField"
